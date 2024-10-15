@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
 import "./Game.css";
 import { useState, useRef } from "react";
 
 function Game({
   verifyLetter,
-  pickedWord,
   pickedCategory,
   letters,
   guessedLetters,

@@ -57,9 +57,9 @@ function App() {
     }
 
     if (letters.includes(normalizeLetter)) {
-      setGuessedLetters((actualGuessedLetters) => [...guessedLetters, normalizeLetter]);
+      setGuessedLetters([...guessedLetters, normalizeLetter]);
     } else {
-      setWrongLetters((actualWrongLetters) => [...wrongLetters, normalizeLetter]);
+      setWrongLetters([...wrongLetters, normalizeLetter]);
       setGuesses((actualGuesses) => actualGuesses - 1);
     }
   };
@@ -98,8 +98,8 @@ function App() {
       {gameStage === "game" && (
         <Game
           verifyLetter={verifyLetter}
-          pickedWord={pickedWord}
           pickedCategory={pickedCategory}
+          pickedWord={pickedWord}
           letters={letters}
           guessedLetters={guessedLetters}
           wrongLetters={wrongLetters}
