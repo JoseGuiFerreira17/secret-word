@@ -49,9 +49,39 @@ function App() {
     setGameStage(stages[1].name);
   };
 
-  const verifyLetter = () => {
-    setGameStage(stages[2].name);
+  const verifyLetter = (letter) => {
+    const normalizeLetter = letter.toLowerCase();
+
+    if (guessedLetters.includes(normalizeLetter) || wrongLetters.includes(normalizeLetter)) {
+      return;
+    }
+
+    if (letters.includes(normalizeLetter)) {
+      setGuessedLetters((actualGuessedLetters) => [...guessedLetters, normalizeLetter]);
+    } else {
+      setWrongLetters((actualWrongLetters) => [...wrongLetters, normalizeLetter]);
+      setGuesses((actualGuesses) => actualGuesses - 1);
+    }
   };
+
+  const clearLetterState = () => {
+    setGuessedLetters([]);
+    setWrongLetters([]);
+  };
+
+  useEffect(() => {
+    if (guesses <= 0) {
+      clearLetterState();
+      setGameStage(stages[2].name);
+    }
+  }, [guesses]);
+
+  const retry = () => {
+    setGuesses(3);
+    setScore(0);
+    setGameStage(stages[0].name);
+  };
+
   return (
     <div className="App">
       {gameStage === "start" && <StartScreen startGame={startGame} />}
@@ -67,7 +97,7 @@ function App() {
           score={score}
         />
       )}
-      {gameStage === "end" && <GameOver />}
+      {gameStage === "end" && <GameOver retry={retry} />}
     </div>
   );
 }
