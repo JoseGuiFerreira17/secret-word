@@ -66,6 +66,7 @@ export const wordsList = {
   animais: ["cachorro", "gato", "elefante", "leão"],
   cores: ["vermelho", "azul", "amarelo", "verde"]
 };
+```
 
 ## 🕹️ Como Jogar
 
