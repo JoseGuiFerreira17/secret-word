@@ -33,7 +33,7 @@ Este é um simples jogo da forca desenvolvido em React. O jogador precisa adivin
 2. Acesse a pasta do projeto:
 
     ```bash
-    cd jogo-da-forca-react
+    cd secret-word
     ```
 
 3. Instale as dependências:
@@ -76,3 +76,6 @@ export const wordsList = {
 4. Continue tentando até adivinhar a palavra ou esgotar suas tentativas.
 5. No final, a pontuação será exibida, e você poderá reiniciar o jogo clicando em "Resetar Jogo".
 
+## 📈 Pontuação
+100 pontos por palavra adivinhada corretamente.
+O jogo reinicia automaticamente após cada vitória.
