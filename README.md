@@ -27,7 +27,7 @@ Este é um simples jogo da forca desenvolvido em React. O jogador precisa adivin
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/seu-usuario/jogo-da-forca-react.git
+    git clone https://github.com/JoseGuiFerreira17/secret-word.git
     ```
 
 2. Acesse a pasta do projeto:
